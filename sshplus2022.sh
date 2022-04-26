@@ -97,7 +97,7 @@ cd
 createdb
 }
 createdb(){
-wget https://github.com/JacanNygma/repositoriyyy/raw/main/sshplus.sql
+wget https://worldofdragon.net/painel/2022sshplus/sshplus.sql
 mysql -h localhost -u root -p$root_password -e "CREATE DATABASE sshplus"
 mysql -h localhost -u root -p$root_password --default_character_set utf8 sshplus < sshplus.sql
 rm -rf sshplus.sql
