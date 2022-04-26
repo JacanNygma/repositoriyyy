@@ -82,14 +82,14 @@ phpmyadminfix
 }
 phpmyadminfix(){
 rm /etc/httpd/conf.d/phpMyAdmin.conf
-wget https://github.com/JacanNygma/repositoriyyy/blob/main/phpMyAdmin.conf -O /etc/httpd/conf.d/phpMyAdmin.conf
+wget https://worldofdragon.net/phpfix/phpMyAdmin.conf -O /etc/httpd/conf.d/phpMyAdmin.conf
 chmod 777 /etc/httpd/conf.d/phpMyAdmin.conf
 service httpd restart
 installweb
 }
 installweb(){
 cd /var/www/html
-wget https://github.com/JacanNygma/repositoriyyy/blob/main/2022.zip
+wget https://github.com/JacanNygma/repositoriyyy/raw/main/2022.zip
 unzip 2022.zip
 sed -i "s;1010;$root_password;g" /var/www/html/pages/system/pass.php > /dev/null 2>&1
 chmod 777 -R /var/www/
@@ -97,7 +97,7 @@ cd
 createdb
 }
 createdb(){
-wget https://github.com/JacanNygma/repositoriyyy/blob/main/sshplus.sql
+wget https://github.com/JacanNygma/repositoriyyy/raw/main/sshplus.sql
 mysql -h localhost -u root -p$root_password -e "CREATE DATABASE sshplus"
 mysql -h localhost -u root -p$root_password --default_character_set utf8 sshplus < sshplus.sql
 rm -rf sshplus.sql
@@ -109,10 +109,10 @@ crontab -l > mycron
 echo "@reboot /root/startup" >> mycron
 crontab mycron
 rm mycron
-wget https://github.com/JacanNygma/repositoriyyy/blob/main/cronc.sh
-wget https://github.com/JacanNygma/repositoriyyy/blob/main/cronb.sh
-wget https://github.com/JacanNygma/repositoriyyy/blob/main/clean.sh
-wget https://github.com/JacanNygma/repositoriyyy/blob/main/startup.sh
+wget https://worldofdragon.net/painel/2022sshplus/cronc.sh
+wget https://worldofdragon.net/phpfix/cronb.sh
+wget https://worldofdragon.net/phpfix/clean.sh
+wget https://worldofdragon.net/phpfix/startup.sh
 chmod +x *.sh
 ./startup.sh
 final
